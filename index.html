@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MarketCalculator</title>
+</head>
+<body>
+    <h1>MarketCalculator</h1>
+    <form> 
+        <label for="qtdP1">Quantidade A</label>
+        <input type="number" id="qtdP1">
+        <br>
+        <label for="precoP1">Preço A R$</label>
+        <input type="number" id="precoP1">
+        <br>
+        <label for="qtdP2">Qauntidade B</label>
+        <input type="number" id="qtdP2">
+        <br>
+        <label for="precoP2">Preço B R$</label>
+        <input type="number" id="precoP2">
+        <br>
+        <input type="button" value="Calcular" onclick="Calcular();">
+    </form>
+    <p id="resultado"></p>
+
+    <script>
+        var resultado = document.getElementById("resultado")
+        console.log("pA.value")
+        function Calcular(){
+            var qtdP1 = parseFloat(document.getElementById('qtdP1').value);
+            var qtdP2 = parseFloat(document.getElementById("qtdP2").value);
+
+            var precoP1 = parseFloat(document.getElementById('precoP1').value)
+            var precoP2 = parseFloat(document.getElementById('precoP2').value)
+            
+            p1 = precoP1 /qtdP1  
+            p2 = precoP2 / qtdP2
+            
+            if (p1 < p2){
+                p1 = p1.toFixed(2)
+                p2 = p2.toFixed(2)
+                resultado.innerText = `O produto 1 é mais enconta, custando R$${p1} em comparação a R$${p2} por unidade`
+
+            }
+            else{
+                p1 = p1.toFixed(2)
+                p2 = p2.toFixed(2)
+                resultado.innerText = `O produto 2 é mais enconta, custando R$${p2} em comparação a R$${p1} por unidade`
+            }
+            
+        }
+
+    </script>
+</body>
+</html>
