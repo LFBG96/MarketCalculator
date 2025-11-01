@@ -11,6 +11,11 @@
             margin: 0;
             padding: 0;
         }
+        p{
+        text-align:center;
+
+
+        }
 
         h1 {
             text-align: center;
@@ -53,6 +58,7 @@
             background-color: #0056b3;
         }
 
+
         #resultado {
             text-align: center;
             font-weight: bold;
@@ -61,7 +67,16 @@
     </style>
 </head>
 <body>
+
     <h1>MarketCalculator</h1>
+    <p>Site feito a pedido de João Andrade. <a href="https://www.instagram.com/joaobarsande?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank"><img
+    class="logoInstagram"
+    src="https://png.pngtree.com/png-clipart/20221119/ourmid/pngtree-instagram-social-media-christmas-hat-png-image_6445824.png"
+    alt="Instagram natal"
+    width="20" height="20">
+    </a>
+    </p>
+
     <form> 
         <label for="qtdP1">Quantidade A</label>
         <input type="number" id="qtdP1">
@@ -79,9 +94,14 @@
     </form>
     <p id="resultado"></p>
 
+    <footer>
+    <p>Desde 8 de julho de 2024</p>
+    </footer>
+
+
     <script>
         var resultado = document.getElementById("resultado")
-        console.log("pA.value")
+        console.log("Funcionando")
         function Calcular(){
             var qtdP1 = parseFloat(document.getElementById('qtdP1').value);
             var qtdP2 = parseFloat(document.getElementById("qtdP2").value);
@@ -95,13 +115,19 @@
             if (p1 < p2){
                 p1 = p1.toFixed(2)
                 p2 = p2.toFixed(2)
-                resultado.innerText = `O produto A é mais enconta, custando R$${p1} em comparação a R$${p2} por unidade`
+                resultado.innerText = `O produto A é mais em conta, custando R$${p1} em comparação a R$${p2} por unidade.`
 
+            }
+            else if (p1 > p2){
+                p1 = p1.toFixed(2)
+                p2 = p2.toFixed(2)
+                resultado.innerText = `O produto B é mais em conta, custando R$${p2} em comparação a R$${p1} por unidade.`
             }
             else{
                 p1 = p1.toFixed(2)
                 p2 = p2.toFixed(2)
-                resultado.innerText = `O produto B é mais enconta, custando R$${p2} em comparação a R$${p1} por unidade`
+                resultado.innerText = `Qualquer escolha sai o mesmo valor, que é: R$${p2} para ambos por unidade.`
+
             }
             
         }
